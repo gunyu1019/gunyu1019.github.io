@@ -34,6 +34,7 @@ div.introduction {
   img {
     position: absolute;
     // bottom: 0;
+    transform: translateY(calc(100vh - 100%));
     right: 0;
     max-width: calc(100vw - 64px - max(calc(31rem + 30vh), calc(100vw - 39rem)) + 50vh);
     min-height: 100vh;
