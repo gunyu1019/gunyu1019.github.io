@@ -1,5 +1,14 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
+div.swiper-container {
+  width: 100vw;
+  height: 100vh;
+
+  div.swiper-slide {
+    // height: 100vh;
+  }
+}
+
 div.introduction {
   display: flex;
   height: 100vh;
