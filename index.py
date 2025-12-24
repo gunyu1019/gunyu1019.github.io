@@ -34,6 +34,7 @@ class MainPage(Page):
         # pageable.on("scroll.end", self.on_scroll_end)
         fullpage = js.Swiper.new(".swiper-container", jsobj(
             direction="vertical",
+            simulateTouch=False,
             loop=False,
             slidesPerView=1,
             spaceBetween=0,
