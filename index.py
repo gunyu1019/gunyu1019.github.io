@@ -28,14 +28,20 @@ class MainPage(Page):
         if is_server_side:
             return
         pageable = js.Pageable.new("#container")
-        pageable.on("scroll", self.on_scroll)
+        pageable.on("scroll.start", self.on_scroll_start)
+        pageable.on("scroll.end", self.on_scroll_end)
 
-    def on_scroll(self, data):
-        # TOO-HARD CODING!!
-        if data["index"] != 0:
-            self.document.querySelector("div.introduction > img").style.display = "none"
-        else:
-            self.document.querySelector("div.introduction > img").style.display = "block"
+    def on_scroll_start(self, data):
+        image_element = self.document.querySelector("div.introduction > img")
+        if data["index"] == 0:
+            image_element.style.display = "block"
+            image_element.style.transform = "translateY(calc(100vh - 100%))"
+
+    def on_scroll_end(self, data):
+        image_element = self.document.querySelector("div.introduction > img")
+        if data["index"] > 0:
+            image_element.style.display = "none"
+            image_element.style.transform = "translateY(-100vh)"
 
 
 application.mount("#app")
