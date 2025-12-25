@@ -3,9 +3,14 @@
 div.swiper-container {
   width: 100vw;
   height: 100vh;
+}
 
-  div.swiper-slide {
-    // height: 100vh;
+div.swiper-project-container {
+  width: 100vw;
+
+  div.swiper-scrollbar {
+    position: fixed;
+    height: .6rem;
   }
 }
 
@@ -55,7 +60,98 @@ div.project {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100vw;
   height: 100vh;
+
+  font-family: Pretendard;
+
+  span.project-title {
+    text-align: center;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3.25rem;
+
+    position: absolute;
+    top: 3rem;
+  }
+
+  div.project-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+
+    gap: 1.25rem;
+
+    img.project-image {
+      border-radius: 1rem;
+      height: 24rem;
+    }
+
+    div.project-wrapper-content {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+
+      min-height: 24rem;
+
+      span.project-name {
+        text-align: center;
+        font-size: 3rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 3.25rem;
+      }
+
+      span.project-description {
+        display: block;
+        font-size: 1.3rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+      }
+
+      span.project-date {
+        display: block;
+        font-size: 1.0rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        margin-bottom: .8rem;
+      }
+
+      div.project-button-group {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        margin-top: auto !important;
+
+        gap: 1.25rem;
+
+        a.project-button {
+          padding: .75rem 1.6rem;
+          border-radius: 1rem;
+          background: #D9D9D9;
+          color: #000;
+
+          font-size: 1.8rem;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 100%;
+          text-decoration: none;
+
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            background: #808080;
+            color: #EEE;
+          }
+        }
+      }
+    }
+  }
 }
 
 div.virtual-business-card {
