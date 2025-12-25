@@ -29,9 +29,7 @@ class MainPage(Page):
     def on_ready(self):
         if is_server_side:
             return
-        # pageable = js.Pageable.new("#container")
-        # pageable.on("scroll.start", self.on_scroll_start)
-        # pageable.on("scroll.end", self.on_scroll_end)
+
         fullpage = js.Swiper.new(".swiper-container", jsobj(
             direction="vertical",
             simulateTouch=False,
@@ -44,18 +42,6 @@ class MainPage(Page):
                 clickable=True,
             )
         ))
-
-    # def on_scroll_start(self, data):
-    #     image_element = self.document.querySelector("div.introduction > img")
-    #     if data["index"] == 0:
-    #         image_element.style.display = "block"
-    #         image_element.style.transform = "translateY(calc(100vh - 100%))"
-
-    # def on_scroll_end(self, data):
-    #     image_element = self.document.querySelector("div.introduction > img")
-    #     if data["index"] > 0:
-    #         image_element.style.display = "none"
-    #         image_element.style.transform = "translateY(-100vh)"
 
 
 application.mount("#app")
