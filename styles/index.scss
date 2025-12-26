@@ -26,10 +26,10 @@ div.swiper-project-container {
 
 div.introduction {
   display: flex;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 
-  @media screen and (max-width: $tablet-breakpoint-width) {
+  @media screen and (max-aspect-ratio: 1/1) {
     margin: 0;
     word-break: keep-all;
 
@@ -43,7 +43,9 @@ div.introduction {
     img {
       position: absolute;
       right: 0;
-      height: calc(100vh - 22rem);
+      min-width: 80%;
+      min-height: 80%;
+      max-width: 120vw;
       transform: translateY(-22rem);
     }
 
@@ -54,7 +56,7 @@ div.introduction {
     }
   }
 
-  @media screen and (min-width: $tablet-breakpoint-width) {
+  @media screen and (min-aspect-ratio: 1/1) {
     margin: auto auto auto 4rem;
 
     span {
@@ -63,10 +65,10 @@ div.introduction {
 
     img {
       position: absolute;
-      transform: translateY(calc(100vh - 100%));
+      transform: translateY(calc(100dvh - 100%));
       right: 0;
       max-width: calc(100vw - 64px - max(calc(31rem + 30vh), calc(100vw - 39rem)) + 50vh);
-      min-height: 100vh;
+      min-height: 100dvh;
     }
 
     div.about-components {
@@ -161,7 +163,7 @@ div.project {
 
   font-family: Pretendard;
 
-  @media screen and (max-width: $tablet-breakpoint-width) {
+  @media screen and (max-aspect-ratio: 1/1) {
     div.project-wrapper {
       flex-direction: column;
 
@@ -172,7 +174,7 @@ div.project {
     }
   }
 
-  @media screen and (min-width: $tablet-breakpoint-width) {
+  @media screen and (min-aspect-ratio: 1/1) {
     div.project-wrapper {
       flex-direction: row;
 
@@ -277,7 +279,7 @@ div.virtual-business-card {
 
   gap: 1rem;
 
-  @media (max-height: 764px) {
+  @media (max-device-height: 764px) {
     span.section-title {
       position: relative;
       top: 0;
