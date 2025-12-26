@@ -161,9 +161,29 @@ div.project {
 
   font-family: Pretendard;
 
+  @media screen and (max-width: $tablet-breakpoint-width) {
+    div.project-wrapper {
+      flex-direction: column;
+
+      img.project-image {
+        max-width: 100%;
+        max-height: 24rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: $tablet-breakpoint-width) {
+    div.project-wrapper {
+      flex-direction: row;
+
+      img.project-image {
+        height: 24rem;
+      }
+    }
+  }
+
   div.project-wrapper {
     display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
 
@@ -171,7 +191,6 @@ div.project {
 
     img.project-image {
       border-radius: 1rem;
-      height: 24rem;
     }
 
     div.project-wrapper-content {
