@@ -7,6 +7,8 @@ class VirtualBusinessCard(Component):
 
     def populate(self):
         with t.div(classes=["virtual-business-card"]):
+            t.span("궁금한 것이 있으면 언제든지 연락주세요!", classes=["container", "section-title"])
+
             with t.div(classes=["business-card"], ref="business-card"):
                 with t.div(classes=["business-card-header"]):
                     t.span("이용현", classes=["business-card-header-title"])
@@ -17,7 +19,7 @@ class VirtualBusinessCard(Component):
                     t.div(classes=["divider"])
                     with t.div(classes=["business-card-item"]):
                         t.i(classes=["fab fa-linkedin"])
-                        t.a("in/gunyu1019")
+                        t.a("in/gunyu1019", href="https://www.linkedin.com/in/gunyu1019")
                     with t.div(classes=["business-card-item"]):
                         t.i(classes=["fab fa-discord"])
                         t.a("@gunyu1019")

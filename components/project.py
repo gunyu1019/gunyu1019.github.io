@@ -28,7 +28,7 @@ class Project(Component):
 
     def populate(self):
         with t.div(classes=["project"]):
-            t.span("진행했던 여러 개인 프로젝트를 소개합니다!", classes=["project-title"])
+            t.span("진행했던 여러 개인 프로젝트를 소개합니다!", classes=["container", "section-title"])
 
             with t.div(classes=["swiper", "swiper-project-container"]):
                 with t.div(classes=["swiper-wrapper"]):
