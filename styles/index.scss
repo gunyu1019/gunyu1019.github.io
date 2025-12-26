@@ -1,5 +1,15 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
+$mobile-breakpoint-width: 480px;
+$tablet-breakpoint-width: 768px;
+$notebook-breakpoint-width: 1280px;
+
+@media  (max-width: $notebook-breakpoint-width) {
+  :root {
+    font-size: 80%;
+  }
+}
+
 div.swiper-container {
   width: 100vw;
   height: 100vh;
@@ -28,6 +38,7 @@ div.introduction {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
 
     height: 100vh;
     width: max(calc(31rem + 30vh), calc(100vw - 40rem));
@@ -42,6 +53,58 @@ div.introduction {
       display: block;
       font-size: 1.5rem;
       font-weight: 600;
+    }
+
+    div.sns-group {
+      margin-top: 1.87rem;
+      border-radius: 1.125rem;
+      border: 3px solid #000;
+      background: #FFF;
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      overflow: hidden;
+
+      a.sns-item {
+        color: black;
+        font-size: 1.6rem;
+
+        width: 50px;
+        height: 50px;
+        padding: .5rem;
+
+        text-decoration: none;
+
+        box-shadow: inset 0 0 0 0 black;
+        transition: ease-out 0.5s;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 34px;
+
+        &:hover {
+          box-shadow: inset 0 -50px 0 0 black;
+          cursor: pointer;
+
+          &:nth-child(1) {
+            color: white;
+          }
+          &:nth-child(2) {
+            color: #7289DA;
+          }
+          &:nth-child(3) {
+            color: #d6249f;
+          }
+          &:nth-child(4) {
+            color: #0e76a8;
+          }
+          &:nth-child(5) {
+            color: #0070EE;
+          }
+        }
+      }
     }
   }
 
@@ -64,17 +127,6 @@ div.project {
   height: 100vh;
 
   font-family: Pretendard;
-
-  span.project-title {
-    text-align: center;
-    font-size: 3rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 3.25rem;
-
-    position: absolute;
-    top: 3rem;
-  }
 
   div.project-wrapper {
     display: flex;
@@ -142,6 +194,8 @@ div.project {
           line-height: 100%;
           text-decoration: none;
 
+          white-space: nowrap;
+
           transition: all 0.3s ease-in-out;
 
           &:hover {
@@ -162,18 +216,35 @@ div.virtual-business-card {
   height: 100vh;
 }
 
+div.virtual-business-card {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+
+  gap: 1rem;
+
+  @media (max-height: 764px) {
+    span.section-title {
+      position: relative;
+      top: 0;
+    }
+  }
+}
+
 div.business-card {
   align-content: space-between;
   border: black solid 3px;
-  border-radius: 2.88rem;
+  border-radius: 1.92rem;
 
   display: flex;
-  margin: 2.16rem;
+  margin: 1.44rem;
   flex-wrap: wrap;
   position: relative;
 
-  width: 36.45rem;
-  height: 58.05rem;
+  width: 24.3rem;
+  height: 38.7rem;
   font-family: Pretendard;
 
   transition: all 0.1s;
@@ -183,30 +254,30 @@ div.business-card {
     flex-wrap: wrap;
     flex-direction: column;
     position: relative;
-    margin: 2.16rem;
+    margin: 1.44rem;
     width: 100%;
-    height: 8.64rem;
+    height: 5.76rem;
     justify-content: center;
 
     span.business-card-header-title {
       color: #0070EE;
-      font-size: 5.67rem;
+      font-size: 3.78rem;
       font-weight: 700;
       word-wrap: break-word;
-      line-height: 5.67rem;
+      line-height: 3.78rem;
     }
 
     span.business-card-header-subtitle {
       color: black;
-      font-size: 2.7rem;
+      font-size: 1.8rem;
       font-weight: 700;
       word-wrap: break-word;
-      line-height: 2.7rem;
+      line-height: 1.8rem;
     }
 
     img.business-card-qrcode {
-      width: 8.64rem;
-      height: 8.64rem;
+      width: 5.76rem;
+      height: 5.76rem;
       position: absolute;
       right: 0;
       top: 0;
@@ -217,14 +288,14 @@ div.business-card {
     display: flex ;
     flex-wrap: nowrap;
     flex-direction: column;
-    margin: 2.16rem;
+    margin: 1.44rem;
     width: 100%;
 
     span.business-card-footer-title {
       color: black;
-      font-size: 3.24rem;
+      font-size: 2.16rem;
       font-weight: 700;
-      line-height: 3.51rem;
+      line-height: 2.34rem;
       word-wrap: break-word;
     }
 
@@ -234,16 +305,16 @@ div.business-card {
       flex-direction: row;
 
       i {
-        font-size: 2.805rem;
+        font-size: 1.87rem;
       }
 
       a {
         color: black;
-        margin: 0 0 0 1.2rem;
+        margin: 0 0 0 .86rem;
         text-decoration: none;
-        font-size: 2.16rem;
+        font-size: 1.44rem;
         font-weight: 600;
-        line-height: 3.51rem;
+        line-height: 2.34rem;
         word-wrap: break-word;
       }
     }
@@ -254,6 +325,19 @@ div.business-card {
     background: #000000;
     height: 3px;
     width: 100%;
-    margin: .81rem 0 2.22rem 0;
+    margin: .54rem 0 1.48rem 0;
   }
+}
+
+span.section-title {
+  text-align: center;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3.25rem;
+
+  word-break: keep-all;
+
+  position: absolute;
+  top: 3rem;
 }
