@@ -4,7 +4,7 @@ $mobile-breakpoint-width: 480px;
 $tablet-breakpoint-width: 768px;
 $notebook-breakpoint-width: 1280px;
 
-@media  (max-width: $notebook-breakpoint-width) {
+@media screen and (max-width: $notebook-breakpoint-width) {
   :root {
     font-size: 80%;
   }
@@ -27,21 +27,64 @@ div.swiper-project-container {
 div.introduction {
   display: flex;
   height: 100vh;
-  margin: auto auto auto 64px;
   overflow: hidden;
+
+  @media screen and (max-width: $tablet-breakpoint-width) {
+    margin: 0;
+    word-break: keep-all;
+
+    display: flex;
+    flex-direction: column-reverse;
+
+    span {
+      display: contents;
+    }
+
+    img {
+      position: absolute;
+      right: 0;
+      height: calc(100vh - 22rem);
+      transform: translateY(-22rem);
+    }
+
+    div.about-components {
+      padding: 2rem 0.8rem;
+      box-shadow: 0 10px 0 0 rgba(0, 0, 0, 0.25);
+      width: 100vw;
+    }
+  }
+
+  @media screen and (min-width: $tablet-breakpoint-width) {
+    margin: auto auto auto 4rem;
+
+    span {
+      display: block;
+    }
+
+    img {
+      position: absolute;
+      transform: translateY(calc(100vh - 100%));
+      right: 0;
+      max-width: calc(100vw - 64px - max(calc(31rem + 30vh), calc(100vw - 39rem)) + 50vh);
+      min-height: 100vh;
+    }
+
+    div.about-components {
+      border-radius: 0 50vh 50vh 0;
+      box-shadow: 20px 0 0 0 rgba(0, 0, 0, 0.25);
+      height: 100vh;
+      width: max(calc(31rem + 30vh), calc(100vw - 40rem));
+    }
+  }
 
   div.about-components {
     background: white;
-    border-radius: 0 50vh 50vh 0;
-    box-shadow: 20px 0 0 0 rgba(0, 0, 0, 0.25);
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 
-    height: 100vh;
-    width: max(calc(31rem + 30vh), calc(100vw - 40rem));
     z-index: 1;
 
     h3 {
@@ -50,7 +93,6 @@ div.introduction {
     }
 
     span {
-      display: block;
       font-size: 1.5rem;
       font-weight: 600;
     }
@@ -106,15 +148,6 @@ div.introduction {
         }
       }
     }
-  }
-
-  img {
-    position: absolute;
-    // bottom: 0;
-    transform: translateY(calc(100vh - 100%));
-    right: 0;
-    max-width: calc(100vw - 64px - max(calc(31rem + 30vh), calc(100vw - 39rem)) + 50vh);
-    min-height: 100vh;
   }
 }
 
