@@ -11,7 +11,7 @@ class FooterComponent(Component):
                 with t.div(classes=["footer-item"]):
                     t.a("Yong Hyun, Lee", classes=["footer-topic"], href="https://yhs.kr/")
                     t.span("Copyright(©) 2022-present gunyu1019 All right reserved.", classes=["footer-description"])
-                    t.a("Integrated Terms of Services", href="#term", classes=["footer-link"])
+                    t.a("통합 이용약관", href="#term", classes=["footer-link"])
                     t.span("Made by gunyu1019, powered by PuePy", classes=["footer-description"])
                 with t.div(classes=["footer-item"]):
                     t.span("Recommend Project", classes=["footer-topic"])
