@@ -3,6 +3,9 @@ from puepy.runtime import is_server_side
 
 from common import application
 
+# noinspection PyUnresolvedReferences
+import footer
+
 if not is_server_side:
     import js
 
@@ -174,4 +177,6 @@ class TermsOfServices(Page):
 
                 t.h3("제 2 조 (이전 약관의 효력)")
                 t.p("이 약관 시행 이전에 시행되던 종전의 약관은 본 약관으로 대체합니다.")
+
+        t.footer_component()
         return

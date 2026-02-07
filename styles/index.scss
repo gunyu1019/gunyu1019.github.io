@@ -3,6 +3,7 @@
 @use "virtual_business_card";
 @use "community";
 @use "terms_of_services";
+@use "footer";
 
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
@@ -19,6 +20,11 @@ $notebook-breakpoint-width: 1280px;
 div.swiper-container {
   width: 100vw;
   height: 100vh;
+}
+
+
+div.footer-slide {
+  height: auto !important;
 }
 
 div.swiper-project-container {

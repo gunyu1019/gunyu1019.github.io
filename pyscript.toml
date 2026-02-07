@@ -8,6 +8,7 @@ packages = ["./puepy-0.6.5-py3-none-any.whl"]
 "./components/introduction.py" = "introduction.py"
 "./components/project.py" = "project.py"
 "./components/virtual_business_card.py" = "virtual_business_card.py"
+"./components/footer.py" = "footer.py"
 "./pages/main.py" = "main_page.py"
 "./pages/community.py" = "community.py"
 "./pages/terms_of_services.py" = "terms_of_services.py"

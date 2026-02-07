@@ -1,5 +1,5 @@
 from puepy import Page, t
-from puepy.runtime import is_server_side
+from puepy.runtime import is_server_side, document
 from puepy.util import jsobj
 
 from common import application
@@ -10,6 +10,8 @@ import introduction
 import virtual_business_card
 # noinspection PyUnresolvedReferences
 import project
+# noinspection PyUnresolvedReferences
+import footer
 
 import json
 
@@ -30,9 +32,10 @@ class MainPage(Page):
     def populate(self):
         with t.div(classes=["swiper", "swiper-container"]):
             with t.div(classes=["swiper-wrapper"]):
-                t.introduction(data_anchor="introduction", classes=["swiper-slide"])
-                t.project(data_anchor="project", classes=["swiper-slide"])
-                t.virtual_business_card(data_anchor="virtual_business_card", classes=["swiper-slide"])
+                t.introduction(data_anchor="introduction", classes=["swiper-slide", "page-slide"])
+                t.project(data_anchor="project", classes=["swiper-slide", "page-slide"])
+                t.virtual_business_card(data_anchor="virtual_business_card", classes=["swiper-slide", "page-slide"])
+                t.footer_component(data_anchor="footer", classes=["swiper-slide", "footer-slide"])
             t.div(classes=["swiper-pagination"])
 
         # Modal for long project description
@@ -54,15 +57,17 @@ class MainPage(Page):
         if is_server_side:
             return
 
+        total_slides = int(js.document.querySelectorAll('.page-slide').length)
         fullpage = js.Swiper.new(".swiper-container", jsobj(
             direction="vertical",
             simulateTouch=False,
+            slidesPerView='auto',
             loop=False,
-            slidesPerView=1,
             spaceBetween=0,
             mousewheel=True,
             pagination=jsobj(
                 el=".swiper-pagination",
                 clickable=True,
-            )
+                renderBullet=lambda index, className:"" if index > total_slides - 1 else f'<span class="{className}"></span>'
+            ),
         ))
