@@ -16,7 +16,7 @@ class Introduction(Component):
                 with t.div(classes=["sns-group"]):
                     with t.a(href="https://github.com/gunyu1019", classes=["sns-item"]):
                         t.i(classes=["fab fa-github"])
-                    with t.a(href="https://discord.gg/", classes=["sns-item"]):
+                    with t.a(href="#community", classes=["sns-item"]):
                         t.i(classes=["fab fa-discord"])
                     with t.a(href="https://instagram.com/yonghyun1019", classes=["sns-item"]):
                         t.i(classes=["fab fa-instagram"])

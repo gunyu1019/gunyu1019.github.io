@@ -22,7 +22,7 @@ class VirtualBusinessCard(Component):
                         t.a("in/gunyu1019", href="https://www.linkedin.com/in/gunyu1019")
                     with t.div(classes=["business-card-item"]):
                         t.i(classes=["fab fa-discord"])
-                        t.a("@gunyu1019")
+                        t.a("@gunyu1019", href="#community")
                     with t.div(classes=["business-card-item"]):
                         t.i(classes=["fab fa-github"])
                         t.a("gunyu1019", href="https://github.com/gunyu1019")
