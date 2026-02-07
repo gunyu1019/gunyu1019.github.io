@@ -1,0 +1,121 @@
+// 변수 정의
+$text-main: #333333;
+$text-black: #000000;
+$bg-white: #ffffff;
+$bg-chapter: #f9f9f9;
+$border-accent: #555555;
+$font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+
+// 1rem = 16px 기준
+.terms-of-service {
+  max-width: 50rem;        // 800px
+  margin: 2.5rem auto;     // 40px auto
+  padding: 1.25rem;        // 20px
+  background-color: $bg-white;
+  color: $text-main;
+  font-family: $font-family;
+
+  // 요청사항 반영: 최소 16px, 약간 굵게
+  font-size: 1rem;         // 16px
+  font-weight: 500;        // 400(Normal)보다 약간 굵은 Medium
+  line-height: 1.6;
+
+  // 제목 (약관명)
+  h1 {
+    font-size: 1.5rem;     // 24px
+    text-align: center;
+    padding-bottom: 1.25rem;
+    border-bottom: 0.125rem solid $text-main; // 2px
+    margin-bottom: 2.5rem;
+  }
+
+  // 장 (Chapter)
+  h2 {
+    font-size: 1.25rem;    // 20px
+    background-color: $bg-chapter;
+    padding: 0.625rem 0.9375rem; // 10px 15px
+    margin-top: 2.5rem;
+    margin-bottom: 0.9375rem;
+    border-left: 0.3125rem solid $border-accent; // 5px
+    border-radius: 0.25rem; // 4px
+    font-weight: 700;      // Bold
+  }
+
+  // 조 (Article)
+  h3 {
+    font-size: 1.125rem;   // 18px
+    margin-top: 1.5625rem; // 25px
+    margin-bottom: 0.625rem;
+    color: $text-black;
+    font-weight: 700;      // Bold
+  }
+
+  // 본문 텍스트
+  p {
+    margin-bottom: 0.625rem; // 10px
+    font-size: 1rem;       // 16px
+  }
+
+  // 리스트 (항, 호)
+  ol {
+    padding-left: 1.25rem; // 20px
+    margin-bottom: 0.625rem;
+    font-size: 1rem;       // 16px
+
+    li {
+      margin-bottom: 0.3125rem; // 5px
+
+      // 중첩 리스트
+      ul.sub-list {
+        list-style-type: none;
+        padding-left: 0;
+        margin-top: 0.3125rem;
+
+        li {
+          padding-left: 0.9375rem; // 15px
+          text-indent: -0.9375rem; // 들여쓰기 보정
+        }
+      }
+    }
+  }
+
+  // 강조 텍스트 (본문이 500이므로 strong은 확실히 굵게 700)
+  strong {
+    font-weight: 700;
+  }
+
+  // 모바일 대응
+  @media (max-width: 37.5rem) { // 600px
+    margin: 0;
+    padding: 0.9375rem;    // 15px
+
+    h1 {
+      font-size: 1.25rem;  // 20px
+      margin-bottom: 1.875rem; // 30px
+    }
+  }
+  .supplementary {
+    margin-top: 3.75rem;       // 60px (구분감 주기)
+    padding-top: 1.25rem;      // 20px
+    border-top: 0.0625rem solid #e0e0e0; // 1px 연한 회색 선
+    color: #666666;            // 연한 회색 텍스트
+
+    h2 {
+      background-color: transparent; // 배경색 제거
+      border-left: none;             // 강조선 제거
+      padding-left: 0;
+      margin-top: 0;
+      font-size: 1.125rem;           // 18px
+      color: #333;
+    }
+
+    h3 {
+      font-size: 1rem;               // 16px
+      margin-top: 1.25rem;
+    }
+
+    p {
+      font-size: 0.875rem;           // 14px (본문보다 작게)
+    }
+  }
+}
