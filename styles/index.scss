@@ -164,12 +164,43 @@ div.project {
   font-family: Pretendard;
 
   @media screen and (max-aspect-ratio: 1/1) {
+    gap: 1.44rem;
+
+    span.section-title {
+      position: relative;
+      top: 0;
+    }
+
     div.project-wrapper {
       flex-direction: column;
+      max-height: calc(100vh - 200px);
 
       img.project-image {
         max-width: 100%;
-        max-height: 24rem;
+        max-height: 30vh; // 24rem;
+        object-fit: cover;
+        object-position: bottom;
+      }
+
+      div.project-wrapper-content {
+        height: 100vh;
+
+        span.project-description {
+          display: -webkit-box !important;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          // -webkit-line-clamp: "block-ellipsis"; // calc(100vh - 200px - 41.3rem);
+        }
+
+        div.project-button-group {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        a.project-button {
+          font-size: 1.6rem !important;
+          text-align: center;
+        }
       }
     }
   }
@@ -181,6 +212,12 @@ div.project {
       img.project-image {
         height: 24rem;
       }
+
+      div.project-button-group {
+        flex-direction: row;
+        gap: 1.25rem;
+      }
+
     }
   }
 
@@ -229,12 +266,9 @@ div.project {
 
       div.project-button-group {
         display: flex;
-        flex-direction: row;
         flex-wrap: nowrap;
         justify-content: flex-start;
         margin-top: auto !important;
-
-        gap: 1.25rem;
 
         a.project-button {
           padding: .75rem 1.6rem;
