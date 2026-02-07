@@ -1,0 +1,61 @@
+.redirect-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f2f5;
+
+  &.community-cover {
+    background-image: url('../assets/image/background-2.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  font-family: 'Pretendard', sans-serif;
+
+  .redirect-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+
+    p {
+      color: #4e5058;
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .manual-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: #0070EE;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 2px solid transparent;
+      transition: border-bottom 0.2s;
+
+      &:hover {
+        border-bottom: 2px solid #0070EE;
+      }
+    }
+
+    // 간단한 로딩 스피너
+    .spinner {
+      margin: 1rem auto;
+      width: 2.5rem;
+      height: 2.5rem;
+      border: .5rem solid #f3f3f3;
+      border-top: .5rem solid #0070EE;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
