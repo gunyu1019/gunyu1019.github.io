@@ -54,9 +54,9 @@ class Project(Component):
             return
 
         project_swiper = js.Swiper.new(".swiper-project-container", jsobj(
-            autoplay=jsobj(
-                delay=10000
-            ),
+            # autoplay=jsobj(
+            #     delay=10000
+            # ),
             direction="horizontal",
             simulateTouch=False,
             loop=True,
@@ -68,3 +68,12 @@ class Project(Component):
             ),
             keyboard=True
         ))
+
+        js.window.addEventListener("resize", self.on_resize)
+
+    def on_resize(self, _):
+        elements = js.document.querySelectorAll("span.project-description")
+        if js.window.innerHeight / js.window.innerWidth > 1:  # 모바일 환경
+            # document.querySelector('span.project-description').style.webkitLineClamp = 3 to PyScript
+            return
+        return
